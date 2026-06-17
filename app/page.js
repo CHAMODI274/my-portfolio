@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Hero from '../components/Hero'
+import About from '../components/About'
 
 export default function Home() {
   return (
-     <main>
-      <h1 className="text-white text-4xl p-8">
-        Hello, Portfolio! 🚀
-      </h1>
+    <main>
+      <Hero />
+      <About />
     </main>
   );
 }
