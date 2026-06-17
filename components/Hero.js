@@ -79,7 +79,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-10 w-full pt-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
           <div className="flex-1">
