@@ -82,14 +82,17 @@ export default function Hero() {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-medium text-white leading-tight mb-5">
-              Full-Stack <span className="text-[#7c6ef7]">Developer</span>
-              <br />
-              {'&'} Researcher
+              Chamodi <span className="text-[#7c6ef7]">Sanjana</span>
             </h1>
 
+            <p className="text-lg text-[#94a3b8] mb-3">
+              MSc IT Candidate · Aspiring QA Engineer
+            </p>
+
             <p className="text-[#64748b] text-base leading-relaxed max-w-xl mb-8">
-              I build fast, scalable web applications from pixel-perfect UIs
-              to robust backends. MSc graduate with a passion for research and clean code.
+              Motivated and detail-oriented software tester with hands-on experience in
+              API testing, test case design, bug reporting, and full-stack development.
+              Based in Panadura, Sri Lanka.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-12">
@@ -106,21 +109,21 @@ export default function Hero() {
 
             <div className="flex gap-12">
               <div>
-                <div className="text-3xl font-medium text-white">3+</div>
-                <div className="text-xs text-[#475569] mt-1">Years exp.</div>
-              </div>
-              <div>
-                <div className="text-3xl font-medium text-white">20+</div>
+                <div className="text-3xl font-medium text-white">4+</div>
                 <div className="text-xs text-[#475569] mt-1">Projects</div>
               </div>
               <div>
                 <div className="text-3xl font-medium text-white">MSc</div>
-                <div className="text-xs text-[#475569] mt-1">Degree</div>
+                <div className="text-xs text-[#475569] mt-1">IT Candidate</div>
+              </div>
+              <div>
+                <div className="text-3xl font-medium text-white">QA</div>
+                <div className="text-xs text-[#475569] mt-1">Focused</div>
               </div>
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT — Photo */}
           <div className="flex flex-col items-center gap-4 flex-shrink-0">
             <div className="w-44 h-44 rounded-full border-2 border-[#7c6ef7] p-1">
               <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1e1b3a] to-[#13151d] flex items-center justify-center text-6xl">
@@ -128,13 +131,13 @@ export default function Hero() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-base font-medium text-[#cbd5e1]">Chamodi</div>
-              <div className="text-xs text-[#7c6ef7] mt-1">Full-Stack Developer</div>
+              <div className="text-base font-medium text-[#cbd5e1]">Konara Mudiyanselage Chamodi Sanjana</div>
+              <div className="text-xs text-[#7c6ef7] mt-1">Aspiring SQA Engineer</div>
             </div>
             <div className="flex gap-5">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">GitHub</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">LinkedIn</a>
-              <a href="mailto:you@email.com" className="text-xs text-[#475569] hover:text-white transition-colors">Email</a>
+              <a href="https://github.com/CHAMODI274" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">GitHub</a>
+              <a href="https://linkedin.com/in/kmcsanjana" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">LinkedIn</a>
+              <a href="mailto:chamodibit2022@gmail.com" className="text-xs text-[#475569] hover:text-white transition-colors">Email</a>
             </div>
           </div>
 

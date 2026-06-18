@@ -2,30 +2,30 @@ export default function Education() {
 
   const educationItems = [
     {
-      period: '2023 - 2025',
-      degree: 'MSc in Computer Science',
-      school: 'Your University Name, Sri Lanka',
-      badge: 'Postgraduate',
+      period: 'Jan 2025 - Present',
+      degree: 'MSc in Information Technology',
+      school: 'University of Westminster, UK (via IIT, Sri Lanka)',
+      badge: 'Currently Reading',
       badgeColor: 'text-[#a89ff7] bg-[#7c6ef7]/10 border-[#7c6ef7]/20',
-      note: 'Thesis: ML-based Web Performance Optimization',
+      note: 'Software Dev, OOP, Data Structures, Web & Mobile App Dev, QA',
       current: true,
     },
     {
-      period: '2019 - 2023',
-      degree: 'BSc (Hons) in Computer Science',
-      school: 'Your University Name, Sri Lanka',
-      badge: 'First Class Honours',
+      period: '2021 - 2024',
+      degree: 'Bachelor of Arts (ICT for Development)',
+      school: 'University of Colombo, Faculty of Arts, Dept. of ICT',
+      badge: 'Second Class Upper Division',
       badgeColor: 'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
-      note: 'GPA: 3.8 / 4.0',
+      note: 'GPA: 3.54 — Project Management, HCI, Data Comms, E-Commerce',
       current: false,
     },
     {
-      period: '2017 - 2019',
-      degree: 'A/Levels — Mathematics, Physics, ICT',
-      school: 'Your School Name, Sri Lanka',
+      period: '2019',
+      degree: 'G.C.E. Advanced Level',
+      school: 'Taxila Central College, Horana',
       badge: '3 A Passes',
       badgeColor: 'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
-      note: '',
+      note: 'Index No: 5461316',
       current: false,
     },
   ]
@@ -42,7 +42,7 @@ export default function Education() {
           {educationItems.map((item, index) => (
             <div key={index} className="flex gap-8 pb-12 last:pb-0">
 
-              <div className="w-32 flex-shrink-0 text-right pt-1">
+              <div className="w-36 flex-shrink-0 text-right pt-1">
                 <span className="text-xs text-[#475569]">{item.period}</span>
               </div>
 

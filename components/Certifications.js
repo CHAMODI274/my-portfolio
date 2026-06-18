@@ -2,58 +2,59 @@ export default function Certifications() {
 
   const certifications = [
     {
-      name: 'AWS Certified Developer – Associate',
-      issuer: 'Amazon Web Services',
-      date: 'Jun 2023',
-      icon: '☁️',
-      iconBg: '#1f1500',
-      iconColor: '#ff9900',
-      credentialUrl: '#',
-    },
-    {
-      name: 'Meta React Developer Certificate',
-      issuer: 'Meta / Coursera',
-      date: 'Jan 2024',
-      icon: '⬡',
+      name: 'IT Project Management Skills Program',
+      issuer: 'University of Moratuwa — Open Learning Platform',
+      date: '2026 (Ongoing)',
+      icon: '📋',
       iconBg: '#0d1a35',
-      iconColor: '#1877f2',
+      iconColor: '#378add',
       credentialUrl: '#',
+      status: 'In Progress',
+      statusColor: 'text-[#ef9f27] bg-[#ef9f27]/10 border-[#ef9f27]/20',
     },
     {
-      name: 'Google Professional Cloud Architect',
-      issuer: 'Google Cloud',
-      date: 'Mar 2024',
-      icon: '◈',
-      iconBg: '#0d1a10',
-      iconColor: '#34a853',
+      name: 'Trainee — Full Stack Developer Program',
+      issuer: 'University of Moratuwa — Open Learning Platform',
+      date: '2026 (Ongoing)',
+      icon: '💻',
+      iconBg: '#1e1b3a',
+      iconColor: '#7c6ef7',
       credentialUrl: '#',
+      status: 'In Progress',
+      statusColor: 'text-[#ef9f27] bg-[#ef9f27]/10 border-[#ef9f27]/20',
     },
     {
-      name: 'MongoDB Certified Developer',
-      issuer: 'MongoDB University',
-      date: 'Aug 2023',
-      icon: '🍃',
-      iconBg: '#0d200d',
-      iconColor: '#4db33d',
-      credentialUrl: '#',
-    },
-    {
-      name: 'Microsoft Azure Fundamentals AZ-900',
-      issuer: 'Microsoft',
-      date: 'Oct 2023',
-      icon: '◫',
-      iconBg: '#0d1525',
-      iconColor: '#0078d4',
-      credentialUrl: '#',
-    },
-    {
-      name: 'Complete Full-Stack Web Bootcamp',
-      issuer: 'Udemy',
-      date: 'Apr 2022',
+      name: 'Diploma in ICT',
+      issuer: 'SITC Campus',
+      date: '2023 - 2024',
       icon: '🎓',
-      iconBg: '#1f0d2a',
-      iconColor: '#a435f0',
+      iconBg: '#0d2520',
+      iconColor: '#1d9e75',
       credentialUrl: '#',
+      status: 'Completed',
+      statusColor: 'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
+    },
+    {
+      name: 'Diploma in English',
+      issuer: 'SITC Campus',
+      date: '2022 - 2023',
+      icon: '🌐',
+      iconBg: '#0d1a2e',
+      iconColor: '#378add',
+      credentialUrl: '#',
+      status: 'Completed',
+      statusColor: 'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
+    },
+    {
+      name: 'Diploma in ICT',
+      issuer: 'IMBS Campus',
+      date: '2021 - 2022',
+      icon: '🎓',
+      iconBg: '#2a1f0a',
+      iconColor: '#ef9f27',
+      credentialUrl: '#',
+      status: 'Completed',
+      statusColor: 'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
     },
   ]
 
@@ -61,19 +62,16 @@ export default function Certifications() {
     <section id="certifications" style={{padding:'96px 0',borderTop:'1px solid #1e2028'}}>
       <div style={{maxWidth:'1400px',margin:'0 auto',padding:'0 64px 0 80px'}}>
 
-        {/* Section label */}
         <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest mb-12">
           Licences & Certifications
         </p>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {certifications.map((cert) => (
+          {certifications.map((cert, index) => (
             <div
-              key={cert.name}
+              key={index}
               className="bg-[#13151d] border border-[#1e2028] rounded-xl p-5 hover:border-[#7c6ef7]/40 transition-colors group"
             >
-              {/* Top row — icon + verify link */}
               <div className="flex items-start justify-between mb-4">
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center text-xl flex-shrink-0"
@@ -81,28 +79,21 @@ export default function Certifications() {
                 >
                   {cert.icon}
                 </div>
-                <a
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-xs text-[#475569] hover:text-[#7c6ef7] transition-colors"
-                >
-                  Verify ↗
+                <a href={cert.credentialUrl} target="_blank" rel="noreferrer"
+                  className="text-xs text-[#475569] hover:text-[#7c6ef7] transition-colors">
+                  View ↗
                 </a>
               </div>
 
-              {/* Cert name */}
               <h3 className="text-sm font-medium text-[#cbd5e1] mb-1 leading-snug group-hover:text-white transition-colors">
                 {cert.name}
               </h3>
-
-              {/* Issuer + date */}
               <p className="text-xs text-[#64748b] mb-3">{cert.issuer}</p>
 
               <div className="flex items-center justify-between">
-                <span className="text-xs text-[#475569]">Issued {cert.date}</span>
-                <span className="text-xs bg-[#7c6ef7]/10 text-[#a89ff7] border border-[#7c6ef7]/20 px-2 py-0.5 rounded-md">
-                  Verified
+                <span className="text-xs text-[#475569]">{cert.date}</span>
+                <span className={`text-xs border px-2 py-0.5 rounded-md ${cert.statusColor}`}>
+                  {cert.status}
                 </span>
               </div>
             </div>
