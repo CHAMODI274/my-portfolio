@@ -8,6 +8,7 @@ import Blog from '../components/Blog'
 import CV from '../components/CV'
 import Thesis from '../components/Thesis'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <CV />
       <Thesis />
       <Contact />
+      <Footer />
     </main>
   );
 }
