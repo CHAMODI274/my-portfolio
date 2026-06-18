@@ -7,6 +7,7 @@ import Projects from '../components/Projects'
 import Blog from '../components/Blog'
 import CV from '../components/CV'
 import Thesis from '../components/Thesis'
+import Contact from '../components/Contact'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Blog />
       <CV />
       <Thesis />
+      <Contact />
     </main>
   );
 }
