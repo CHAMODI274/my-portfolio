@@ -4,12 +4,12 @@ export default function Skills() {
     {
       label: 'Frontend',
       skills: [
-        { name: 'React',       icon: '⚛️',  color: 'text-[#61dafb]' },
-        { name: 'Next.js',     icon: '▲',   color: 'text-white'     },
-        { name: 'TypeScript',  icon: 'TS',  color: 'text-[#3178c6]' },
-        { name: 'Tailwind CSS',icon: '🌊',  color: 'text-[#38bdf8]' },
-        { name: 'JavaScript',  icon: 'JS',  color: 'text-[#f7df1e]' },
-        { name: 'HTML & CSS',  icon: '🌐',  color: 'text-[#e34f26]' },
+        { name: 'React',        icon: '⚛️', color: 'text-[#61dafb]' },
+        { name: 'Next.js',      icon: '▲',  color: 'text-white'     },
+        { name: 'TypeScript',   icon: 'TS', color: 'text-[#3178c6]' },
+        { name: 'Tailwind CSS', icon: '🌊', color: 'text-[#38bdf8]' },
+        { name: 'JavaScript',   icon: 'JS', color: 'text-[#f7df1e]' },
+        { name: 'HTML & CSS',   icon: '🌐', color: 'text-[#e34f26]' },
       ],
     },
     {
@@ -35,43 +35,37 @@ export default function Skills() {
     {
       label: 'DevOps & Tools',
       skills: [
-        { name: 'Docker',  icon: '🐳', color: 'text-[#2496ed]' },
-        { name: 'AWS',     icon: '☁️', color: 'text-[#ff9900]' },
-        { name: 'Git',     icon: '🌿', color: 'text-[#f05032]' },
-        { name: 'Linux',   icon: '🐧', color: 'text-[#94a3b8]' },
-        { name: 'Vercel',  icon: '▲',  color: 'text-white'     },
-        { name: 'CI/CD',   icon: '⚙️', color: 'text-[#94a3b8]' },
+        { name: 'Docker', icon: '🐳', color: 'text-[#2496ed]' },
+        { name: 'AWS',    icon: '☁️', color: 'text-[#ff9900]' },
+        { name: 'Git',    icon: '🌿', color: 'text-[#f05032]' },
+        { name: 'Linux',  icon: '🐧', color: 'text-[#94a3b8]' },
+        { name: 'Vercel', icon: '▲',  color: 'text-white'     },
+        { name: 'CI/CD',  icon: '⚙️', color: 'text-[#94a3b8]' },
       ],
     },
   ]
 
   return (
-    <section id="skills" className="py-20 border-t border-[#1e2028]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" style={{padding:'96px 0',borderTop:'1px solid #1e2028'}}>
+      <div style={{maxWidth:'1400px',margin:'0 auto',padding:'0 64px 0 80px'}}>
 
-        {/* Section label */}
-        <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest mb-10">
+        <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest mb-12">
           Skills
         </p>
 
-        {/* Categories */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-12">
           {skillCategories.map((category) => (
             <div key={category.label}>
-
-              {/* Category title */}
-              <p className="text-xs text-[#475569] uppercase tracking-widest mb-4">
+              <p className="text-xs text-[#475569] uppercase tracking-widest mb-5">
                 {category.label}
               </p>
-
-              {/* Skill chips */}
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-2 bg-[#13151d] border border-[#1e2028] rounded-lg px-4 py-2.5 hover:border-[#7c6ef7]/50 transition-colors group"
+                    className="flex items-center gap-2.5 bg-[#13151d] border border-[#1e2028] rounded-lg px-4 py-3 hover:border-[#7c6ef7]/50 transition-colors group cursor-default"
                   >
-                    <span className={`text-base ${skill.color} w-5 text-center`}>
+                    <span className={`text-base ${skill.color} w-5 text-center leading-none`}>
                       {skill.icon}
                     </span>
                     <span className="text-sm text-[#94a3b8] group-hover:text-white transition-colors">
@@ -83,7 +77,6 @@ export default function Skills() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )
