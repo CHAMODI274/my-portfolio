@@ -1,33 +1,36 @@
 export default function CV() {
   return (
-    <section id="cv" style={{padding:'96px 0',borderTop:'1px solid #1e2028'}}>
-      <div style={{maxWidth:'1400px',margin:'0 auto',padding:'0 64px 0 80px'}}>
+    <section id="cv" style={{padding:'100px 0',borderTop:'1px solid #1e2028'}}>
+      <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
 
-        <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest mb-12">
+        <p style={{fontSize:'12px',fontWeight:600,color:'#94a3b8',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:'48px'}}>
           Resume / CV
         </p>
 
-        <div className="bg-[#13151d] border border-[#7c6ef7]/20 rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="flex items-center gap-5">
-            <div className="w-12 h-12 rounded-xl bg-[#7c6ef7]/10 flex items-center justify-center text-2xl flex-shrink-0">
+        <div style={{background:'linear-gradient(135deg,#13151d,#16183a)',border:'1px solid rgba(124,110,247,0.25)',borderRadius:'20px',padding:'40px 48px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:'32px',flexWrap:'wrap'}}>
+
+          <div style={{display:'flex',alignItems:'center',gap:'24px'}}>
+            <div style={{width:'64px',height:'64px',borderRadius:'16px',background:'rgba(124,110,247,0.12)',border:'1px solid rgba(124,110,247,0.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'28px',flexShrink:0}}>
               📄
             </div>
             <div>
-              <h3 className="text-sm font-medium text-[#cbd5e1] mb-1">
-                Chamodi_Sanjana_CV_2026.pdf
+              <h3 style={{fontSize:'20px',fontWeight:600,color:'#f1f5f9',marginBottom:'6px'}}>
+                Chamodi Sanjana — Resume 2026
               </h3>
-              <p className="text-xs text-[#475569]">
-                Updated 2026 · MSc IT Candidate · QA Engineer · 2 pages
+              <p style={{fontSize:'14px',color:'#64748b',marginBottom:'4px'}}>
+                MSc IT Candidate · Aspiring QA Engineer · Full-Stack Developer
+              </p>
+              <p style={{fontSize:'12px',color:'#475569'}}>
+                Last updated June 2026 · 2 pages · PDF
               </p>
             </div>
           </div>
-          <a
-            href="/cv.pdf"
-            download
-            className="flex items-center gap-2 bg-[#7c6ef7] text-white text-sm px-6 py-2.5 rounded-lg hover:bg-[#6a5de8] transition-colors font-medium flex-shrink-0"
-          >
-            Download CV
+
+          <a href="/cv.pdf" download
+            style={{background:'#7c6ef7',color:'#fff',fontSize:'14px',padding:'14px 32px',borderRadius:'10px',textDecoration:'none',fontWeight:500,flexShrink:0,display:'flex',alignItems:'center',gap:'8px'}}>
+            ↓ Download CV
           </a>
+
         </div>
 
       </div>

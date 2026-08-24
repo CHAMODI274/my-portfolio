@@ -1,13 +1,13 @@
 export default function Blog() {
-
   const posts = [
     {
       title: 'Server Components vs Client Components — When to use what',
-      excerpt: 'A practical guide to choosing between React Server and Client Components in Next.js App Router. Covers rendering strategies, data fetching, and real-world patterns.',
+      excerpt: 'A practical guide to choosing between React Server and Client Components in Next.js App Router. Covers rendering strategies, data fetching patterns, and real-world use cases.',
       category: 'Next.js',
       date: 'May 2026',
       readTime: '6 min read',
       url: '#',
+      catStyle: {color:'#a89ff7',background:'rgba(124,110,247,0.1)',border:'1px solid rgba(124,110,247,0.2)'},
     },
     {
       title: 'Building a scalable REST API with Node.js and PostgreSQL',
@@ -16,79 +16,61 @@ export default function Blog() {
       date: 'Apr 2026',
       readTime: '9 min read',
       url: '#',
+      catStyle: {color:'#1d9e75',background:'rgba(29,158,117,0.1)',border:'1px solid rgba(29,158,117,0.2)'},
     },
     {
-      title: 'Dockerizing a full-stack app from zero to production',
-      excerpt: 'How I containerized my Next.js + Node.js + PostgreSQL stack and deployed it on AWS ECS with a CI/CD pipeline using GitHub Actions.',
-      category: 'DevOps',
+      title: 'Effective API Testing with Postman — A QA Engineer\'s Guide',
+      excerpt: 'How to write comprehensive API test suites in Postman, covering collections, environments, assertions, and automated test runs in CI pipelines.',
+      category: 'QA & Testing',
       date: 'Mar 2026',
-      readTime: '8 min read',
+      readTime: '7 min read',
       url: '#',
+      catStyle: {color:'#7c6ef7',background:'rgba(124,110,247,0.1)',border:'1px solid rgba(124,110,247,0.2)'},
     },
     {
-      title: 'How I applied ML to optimize web performance — lessons from my MSc thesis',
-      excerpt: 'A practical summary of my MSc research findings on using reinforcement learning for dynamic resource allocation in web applications.',
+      title: 'What I learned building my MSc Research Project from scratch',
+      excerpt: 'Lessons from designing, developing, and testing a full-stack School Information Management System — covering architecture decisions, API design, and QA strategies.',
       category: 'Research',
       date: 'Feb 2026',
       readTime: '10 min read',
       url: '#',
+      catStyle: {color:'#ef9f27',background:'rgba(239,159,39,0.1)',border:'1px solid rgba(239,159,39,0.2)'},
     },
   ]
 
-  const categoryColors = {
-    'Next.js':  'text-[#a89ff7] bg-[#7c6ef7]/10 border-[#7c6ef7]/20',
-    'Backend':  'text-[#1d9e75] bg-[#1d9e75]/10 border-[#1d9e75]/20',
-    'DevOps':   'text-[#378add] bg-[#378add]/10 border-[#378add]/20',
-    'Research': 'text-[#ef9f27] bg-[#ef9f27]/10 border-[#ef9f27]/20',
-  }
-
   return (
-    <section id="blog" style={{padding:'96px 0',borderTop:'1px solid #1e2028'}}>
-      <div style={{maxWidth:'1400px',margin:'0 auto',padding:'0 64px 0 80px'}}>
+    <section id="blog" style={{padding:'100px 0',borderTop:'1px solid #1e2028'}}>
+      <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
 
-        {/* Header */}
-        <div className="flex items-center justify-between mb-12">
-          <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest">
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'48px',flexWrap:'wrap',gap:'16px'}}>
+          <p style={{fontSize:'12px',fontWeight:600,color:'#94a3b8',textTransform:'uppercase',letterSpacing:'0.1em'}}>
             Blog
           </p>
-          <a href="#" className="text-xs text-[#7c6ef7] hover:text-white transition-colors">
+          <a href="#" style={{fontSize:'13px',color:'#7c6ef7',textDecoration:'none'}}>
             View all posts ↗
           </a>
         </div>
 
-        {/* Posts list */}
-        <div className="flex flex-col gap-4">
+        <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
           {posts.map((post) => (
-            <a
-              key={post.title}
-              href={post.url}
-              className="bg-[#13151d] border border-[#1e2028] rounded-xl p-6 hover:border-[#7c6ef7]/40 transition-colors group flex items-start justify-between gap-6"
-            >
-              <div className="flex-1 min-w-0">
-                {/* Meta */}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className={`text-xs border px-2.5 py-0.5 rounded-md ${categoryColors[post.category]}`}>
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-[#475569]">{post.date}</span>
-                  <span className="text-xs text-[#475569]">{post.readTime}</span>
-                </div>
+            <a key={post.title} href={post.url}
+              style={{background:'#13151d',border:'1px solid #1e2028',borderRadius:'14px',padding:'28px 32px',textDecoration:'none',display:'flex',alignItems:'center',justifyContent:'space-between',gap:'24px',transition:'border-color 0.2s'}}>
 
-                {/* Title */}
-                <h3 className="text-sm font-medium text-[#cbd5e1] mb-2 group-hover:text-white transition-colors leading-snug">
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{display:'flex',alignItems:'center',gap:'12px',marginBottom:'10px',flexWrap:'wrap'}}>
+                  <span style={{fontSize:'11px',padding:'3px 10px',borderRadius:'6px',...post.catStyle}}>{post.category}</span>
+                  <span style={{fontSize:'12px',color:'#475569'}}>{post.date}</span>
+                  <span style={{fontSize:'12px',color:'#475569'}}>{post.readTime}</span>
+                </div>
+                <h3 style={{fontSize:'16px',fontWeight:600,color:'#cbd5e1',marginBottom:'8px',lineHeight:1.4}}>
                   {post.title}
                 </h3>
-
-                {/* Excerpt */}
-                <p className="text-xs text-[#475569] leading-relaxed">
+                <p style={{fontSize:'14px',color:'#475569',lineHeight:1.65}}>
                   {post.excerpt}
                 </p>
               </div>
 
-              {/* Arrow */}
-              <div className="text-[#475569] group-hover:text-[#7c6ef7] transition-colors flex-shrink-0 mt-1 text-lg">
-                →
-              </div>
+              <div style={{fontSize:'20px',color:'#2a2d35',flexShrink:0}}>→</div>
             </a>
           ))}
         </div>

@@ -1,86 +1,76 @@
 export default function About() {
+  const traits = ['Problem-Solving','Attention to Detail','Effective Communication','Teamwork','Adaptability','Time Management','Quick Learner','Agile Methodology']
 
-  const traits = [
-    'Problem-Solving',
-    'Attention to Detail',
-    'Effective Communication',
-    'Teamwork',
-    'Adaptability',
-    'Time Management',
-    'Quick Learner',
-    'Agile Methodology',
+  const info = [
+    { label: 'Location',     value: 'Panadura, Sri Lanka' },
+    { label: 'Degree',       value: 'MSc Information Technology (Reading)' },
+    { label: 'University',   value: 'University of Westminster via IIT' },
+    { label: 'Email',        value: 'chamodibit2022@gmail.com' },
+    { label: 'Phone',        value: '+94 76 798 6468' },
+    { label: 'Availability', value: 'Open to QA & Dev Roles', highlight: true },
   ]
 
   return (
-    <section id="about" style={{padding:'96px 0',borderTop:'1px solid #1e2028'}}>
-      <div style={{maxWidth:'1400px',margin:'0 auto',padding:'0 64px 0 80px'}}>
+    <section id="about" style={{padding:'100px 0',borderTop:'1px solid #1e2028'}}>
+      <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
 
-        <p className="text-xs font-semibold text-[#94a3b8] uppercase tracking-widest mb-12">
+        <p style={{fontSize:'12px',fontWeight:600,color:'#94a3b8',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:'48px'}}>
           About Me
         </p>
 
-        <div className="flex flex-col md:flex-row gap-14 items-start">
+        <div style={{display:'flex',gap:'64px',alignItems:'flex-start',flexWrap:'wrap'}}>
 
-          <div className="flex-shrink-0 flex flex-col items-center gap-4">
-            <div className="w-44 h-44 rounded-2xl border border-[#2a2d35] bg-gradient-to-br from-[#1e1b3a] to-[#13151d] flex items-center justify-center text-6xl">
+          {/* Photo + stats */}
+          <div style={{flexShrink:0,display:'flex',flexDirection:'column',alignItems:'center',gap:'20px'}}>
+            <div style={{width:'180px',height:'180px',borderRadius:'16px',border:'1px solid #2a2d35',background:'linear-gradient(135deg,#1e1b3a,#13151d)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'72px'}}>
               👩‍💻
             </div>
-            <div className="flex gap-3">
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl px-5 py-3 text-center">
-                <div className="text-xl font-medium text-white">4+</div>
-                <div className="text-xs text-[#475569] mt-0.5">Projects</div>
-              </div>
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl px-5 py-3 text-center">
-                <div className="text-xl font-medium text-white">MSc</div>
-                <div className="text-xs text-[#475569] mt-0.5">Reading</div>
-              </div>
+            <div style={{display:'flex',gap:'12px'}}>
+              {[['4+','Projects'],['MSc','Reading']].map(([n,l]) => (
+                <div key={l} style={{background:'#13151d',border:'1px solid #1e2028',borderRadius:'12px',padding:'12px 20px',textAlign:'center'}}>
+                  <div style={{fontSize:'22px',fontWeight:600,color:'#f1f5f9'}}>{n}</div>
+                  <div style={{fontSize:'12px',color:'#475569',marginTop:'4px'}}>{l}</div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="flex-1 min-w-0">
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-2">
-              Hi, I am <span className="text-[#7c6ef7]">Chamodi Sanjana</span>
+          {/* Text */}
+          <div style={{flex:1,minWidth:'280px'}}>
+            <h2 style={{fontSize:'36px',fontWeight:600,color:'#f1f5f9',marginBottom:'8px',letterSpacing:'-0.01em'}}>
+              Hi, I am <span style={{color:'#7c6ef7'}}>Chamodi Sanjana</span>
             </h2>
-            <p className="text-sm text-[#7c6ef7] mb-6">
-              MSc IT Candidate · Aspiring Quality Assurance Engineer · Panadura, Sri Lanka
+            <p style={{fontSize:'15px',color:'#7c6ef7',marginBottom:'28px'}}>
+              MSc IT Candidate · Aspiring Quality Assurance Engineer · Sri Lanka
             </p>
 
-            <p className="text-[#64748b] text-sm leading-relaxed mb-4">
+            <p style={{fontSize:'16px',color:'#64748b',lineHeight:1.75,marginBottom:'20px'}}>
               I am a motivated and detail-oriented MSc Information Technology student with a strong
               foundation in software development and software testing. Skilled in API testing, test
               case design, bug reporting, and quality assurance practices through academic and personal projects.
             </p>
-            <p className="text-[#64748b] text-sm leading-relaxed mb-8">
+            <p style={{fontSize:'16px',color:'#64748b',lineHeight:1.75,marginBottom:'36px'}}>
               Passionate about ensuring software quality, learning emerging technologies, and contributing
-              to high-performing development teams. I bring both a developer and a tester mindset to
-              every project I work on.
+              to high-performing development teams. I bring both a developer and a tester mindset to every project.
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-10">
-              {traits.map((trait) => (
-                <span key={trait} className="text-xs bg-[#7c6ef7]/10 text-[#a89ff7] border border-[#7c6ef7]/20 px-3 py-1.5 rounded-full">
-                  {trait}
+            {/* Trait tags */}
+            <div style={{display:'flex',flexWrap:'wrap',gap:'8px',marginBottom:'40px'}}>
+              {traits.map(t => (
+                <span key={t} style={{fontSize:'13px',background:'rgba(124,110,247,0.08)',color:'#a89ff7',border:'1px solid rgba(124,110,247,0.2)',padding:'6px 14px',borderRadius:'99px'}}>
+                  {t}
                 </span>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl p-4">
-                <p className="text-xs text-[#475569] mb-1.5">Location</p>
-                <p className="text-sm text-[#cbd5e1]">Panadura, Sri Lanka</p>
-              </div>
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl p-4">
-                <p className="text-xs text-[#475569] mb-1.5">Degree</p>
-                <p className="text-sm text-[#cbd5e1]">MSc Information Technology (Reading)</p>
-              </div>
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl p-4">
-                <p className="text-xs text-[#475569] mb-1.5">Email</p>
-                <p className="text-sm text-[#cbd5e1]">chamodibit2022@gmail.com</p>
-              </div>
-              <div className="bg-[#13151d] border border-[#1e2028] rounded-xl p-4">
-                <p className="text-xs text-[#475569] mb-1.5">Availability</p>
-                <p className="text-sm text-[#1d9e75]">Open to work</p>
-              </div>
+            {/* Info grid */}
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:'12px'}}>
+              {info.map(({label, value, highlight}) => (
+                <div key={label} style={{background:'#13151d',border:'1px solid #1e2028',borderRadius:'12px',padding:'16px 20px'}}>
+                  <p style={{fontSize:'11px',color:'#475569',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px'}}>{label}</p>
+                  <p style={{fontSize:'14px',color: highlight ? '#1d9e75' : '#cbd5e1',fontWeight:highlight?500:400}}>{value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

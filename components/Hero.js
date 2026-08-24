@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react'
 
 export default function Hero() {
-
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -18,131 +17,121 @@ export default function Hero() {
     resize()
     window.addEventListener('resize', resize)
 
-    const particles = Array.from({ length: 70 }, () => ({
+    const particles = Array.from({ length: 60 }, () => ({
       x:  Math.random() * canvas.width,
       y:  Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
       r:  Math.random() * 1.5 + 0.5,
     }))
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       particles.forEach(p => {
-        p.x += p.vx
-        p.y += p.vy
+        p.x += p.vx; p.y += p.vy
         if (p.x < 0) p.x = canvas.width
-        if (p.x > canvas.width)  p.x = 0
+        if (p.x > canvas.width) p.x = 0
         if (p.y < 0) p.y = canvas.height
         if (p.y > canvas.height) p.y = 0
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(124, 110, 247, 0.6)'
+        ctx.fillStyle = 'rgba(124,110,247,0.55)'
         ctx.fill()
       })
       particles.forEach((a, i) => {
         particles.slice(i + 1).forEach(b => {
-          const dx = a.x - b.x
-          const dy = a.y - b.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 100) {
-            ctx.beginPath()
-            ctx.moveTo(a.x, a.y)
-            ctx.lineTo(b.x, b.y)
-            ctx.strokeStyle = 'rgba(124, 110, 247, ' + (0.15 * (1 - dist / 100)) + ')'
-            ctx.lineWidth = 0.5
-            ctx.stroke()
+          const d = Math.sqrt((a.x-b.x)**2 + (a.y-b.y)**2)
+          if (d < 110) {
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y)
+            ctx.strokeStyle = 'rgba(124,110,247,' + (0.12*(1-d/110)) + ')'
+            ctx.lineWidth = 0.5; ctx.stroke()
           }
         })
       })
       animationId = requestAnimationFrame(draw)
     }
     draw()
-
-    return () => {
-      cancelAnimationFrame(animationId)
-      window.removeEventListener('resize', resize)
-    }
+    return () => { cancelAnimationFrame(animationId); window.removeEventListener('resize', resize) }
   }, [])
 
   return (
-    <section id="home" style={{position:'relative',minHeight:'100vh',display:'flex',alignItems:'center',overflow:'hidden',width:'100%'}}>
-
+    <section id="home" style={{position:'relative',minHeight:'88vh',display:'flex',alignItems:'center',overflow:'hidden',width:'100%'}}>
       <canvas ref={canvasRef} style={{position:'absolute',inset:0,width:'100%',height:'100%'}} />
 
-      <div style={{position:'relative',zIndex:10,width:'100%',maxWidth:'1400px',margin:'0 auto',padding:'96px 64px 64px 80px'}}>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+      <div style={{position:'relative',zIndex:10,width:'100%',maxWidth:'1280px',margin:'0 auto',padding:'100px 24px 80px'}}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:'48px',flexWrap:'wrap'}}>
 
           {/* LEFT */}
-          <div className="flex-1 min-w-0">
-
-            <div className="inline-flex items-center gap-2 bg-[#7c6ef7]/10 border border-[#7c6ef7]/25 text-[#a89ff7] text-xs px-3 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#7c6ef7] animate-pulse flex-shrink-0" />
-              Available for work
+          <div style={{flex:'1',minWidth:'320px'}}>
+            <div style={{display:'inline-flex',alignItems:'center',gap:'8px',background:'rgba(124,110,247,0.1)',border:'1px solid rgba(124,110,247,0.25)',color:'#a89ff7',fontSize:'12px',padding:'6px 14px',borderRadius:'99px',marginBottom:'28px'}}>
+              <span style={{width:'7px',height:'7px',borderRadius:'50%',background:'#7c6ef7',animation:'pulse 2s infinite',flexShrink:0}} />
+              Open to QA Engineer & Developer Roles
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-medium text-white leading-tight mb-5">
-              Chamodi <span className="text-[#7c6ef7]">Sanjana</span>
+            <h1 style={{fontSize:'clamp(48px,6vw,72px)',fontWeight:600,color:'#f1f5f9',lineHeight:1.1,marginBottom:'12px',letterSpacing:'-0.02em'}}>
+              Chamodi<br /><span style={{color:'#7c6ef7'}}>Sanjana</span>
             </h1>
 
-            <p className="text-lg text-[#94a3b8] mb-3">
+            <p style={{fontSize:'20px',color:'#94a3b8',fontWeight:400,marginBottom:'8px'}}>
               MSc IT Candidate · Aspiring QA Engineer
             </p>
-
-            <p className="text-[#64748b] text-base leading-relaxed max-w-xl mb-8">
-              Motivated and detail-oriented software tester with hands-on experience in
-              API testing, test case design, bug reporting, and full-stack development.
-              Based in Panadura, Sri Lanka.
+            <p style={{fontSize:'14px',color:'#475569',marginBottom:'36px'}}>
+              Panadura, Sri Lanka · University of Westminster (via IIT)
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-12">
-              <a href="#projects" className="bg-[#7c6ef7] text-white text-sm px-6 py-2.5 rounded-lg hover:bg-[#6a5de8] transition-colors font-medium">
+            <p style={{fontSize:'16px',color:'#64748b',lineHeight:1.7,maxWidth:'520px',marginBottom:'40px'}}>
+              Detail-oriented software tester with hands-on experience in API testing,
+              test case design, bug reporting, and full-stack development.
+              Passionate about software quality and emerging technologies.
+            </p>
+
+            <div style={{display:'flex',flexWrap:'wrap',gap:'12px',marginBottom:'48px'}}>
+              <a href="#projects" style={{background:'#7c6ef7',color:'#fff',fontSize:'14px',padding:'12px 28px',borderRadius:'8px',textDecoration:'none',fontWeight:500,transition:'background 0.2s'}}>
                 View Projects
               </a>
-              <a href="#cv" className="border border-[#2a2d35] text-[#94a3b8] text-sm px-5 py-2.5 rounded-lg hover:border-[#7c6ef7] hover:text-white transition-all">
+              <a href="/cv.pdf" download style={{border:'1px solid #2a2d35',color:'#94a3b8',fontSize:'14px',padding:'12px 24px',borderRadius:'8px',textDecoration:'none',transition:'all 0.2s'}}>
                 Download CV
               </a>
-              <a href="#contact" className="border border-[#2a2d35] text-[#94a3b8] text-sm px-5 py-2.5 rounded-lg hover:border-[#7c6ef7] hover:text-white transition-all">
+              <a href="#contact" style={{border:'1px solid #2a2d35',color:'#94a3b8',fontSize:'14px',padding:'12px 24px',borderRadius:'8px',textDecoration:'none',transition:'all 0.2s'}}>
                 Contact Me
               </a>
             </div>
 
-            <div className="flex gap-12">
-              <div>
-                <div className="text-3xl font-medium text-white">4+</div>
-                <div className="text-xs text-[#475569] mt-1">Projects</div>
-              </div>
-              <div>
-                <div className="text-3xl font-medium text-white">MSc</div>
-                <div className="text-xs text-[#475569] mt-1">IT Candidate</div>
-              </div>
-              <div>
-                <div className="text-3xl font-medium text-white">QA</div>
-                <div className="text-xs text-[#475569] mt-1">Focused</div>
-              </div>
+            <div style={{display:'flex',gap:'40px'}}>
+              {[['4+','Projects'],['MSc','IT Candidate'],['QA','Focused']].map(([n,l]) => (
+                <div key={l}>
+                  <div style={{fontSize:'28px',fontWeight:600,color:'#f1f5f9'}}>{n}</div>
+                  <div style={{fontSize:'12px',color:'#475569',marginTop:'4px'}}>{l}</div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* RIGHT — Photo */}
-          <div className="flex flex-col items-center gap-4 flex-shrink-0">
-            <div className="w-44 h-44 rounded-full border-2 border-[#7c6ef7] p-1">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1e1b3a] to-[#13151d] flex items-center justify-center text-6xl">
+          {/* RIGHT — Photo card */}
+          <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:'16px',flexShrink:0}}>
+            <div style={{width:'176px',height:'176px',borderRadius:'50%',border:'2px solid #7c6ef7',padding:'4px'}}>
+              <div style={{width:'100%',height:'100%',borderRadius:'50%',background:'linear-gradient(135deg,#1e1b3a,#13151d)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'64px'}}>
                 👩‍💻
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-base font-medium text-[#cbd5e1]">Konara Mudiyanselage Chamodi Sanjana</div>
-              <div className="text-xs text-[#7c6ef7] mt-1">Aspiring SQA Engineer</div>
+            <div style={{textAlign:'center'}}>
+              <div style={{fontSize:'15px',fontWeight:500,color:'#cbd5e1'}}>Chamodi Sanjana</div>
+              <div style={{fontSize:'12px',color:'#7c6ef7',marginTop:'4px'}}>QA Engineer · Full-Stack Developer</div>
             </div>
-            <div className="flex gap-5">
-              <a href="https://github.com/CHAMODI274" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">GitHub</a>
-              <a href="https://linkedin.com/in/kmcsanjana" target="_blank" rel="noreferrer" className="text-xs text-[#475569] hover:text-white transition-colors">LinkedIn</a>
-              <a href="mailto:chamodibit2022@gmail.com" className="text-xs text-[#475569] hover:text-white transition-colors">Email</a>
+            <div style={{display:'flex',gap:'20px'}}>
+              {[['GitHub','https://github.com/CHAMODI274'],['LinkedIn','https://linkedin.com/in/kmcsanjana'],['Email','mailto:chamodibit2022@gmail.com']].map(([label,href]) => (
+                <a key={label} href={href} target={label!=='Email'?'_blank':undefined} rel="noreferrer"
+                  style={{fontSize:'12px',color:'#475569',textDecoration:'none'}}>
+                  {label}
+                </a>
+              ))}
             </div>
           </div>
 
         </div>
       </div>
+
+      <style>{`@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}`}</style>
     </section>
   )
 }

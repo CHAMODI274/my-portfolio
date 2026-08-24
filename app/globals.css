@@ -15,16 +15,12 @@ body {
   color: #e2e8f0;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0d0f14;
-}
-::-webkit-scrollbar-thumb {
-  background: #7c6ef7;
-  border-radius: 3px;
-}
+a:hover { opacity: 0.85; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d0f14; }
+::-webkit-scrollbar-thumb { background: #7c6ef7; border-radius: 3px; }
